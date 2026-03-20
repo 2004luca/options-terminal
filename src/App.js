@@ -9,6 +9,7 @@ import StrategyPlayground from './pages/StrategyPlayground';
 import PDESolver from './pages/PDESolver';
 import VolSurface from './pages/VolSurface';
 import OptionsChain from './pages/OptionsChain';
+import Derivatives101 from './pages/Derivatives101';
 import './styles/global.css';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
     <BrowserRouter>
       <Layout>
         <Routes>
+          <Route path="/learn" element={<Derivatives101 />} />
           <Route path="/"         element={<OptionsPricer />} />
           <Route path="/strategy" element={<StrategyPlayground />} />
           <Route path="/pde"      element={<PDESolver />} />
