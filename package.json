@@ -9,10 +9,12 @@
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^4.5.1",
     "mathjs": "^15.1.1",
+    "plotly.js": "^3.4.0",
     "plotly.js-dist-min": "^3.4.0",
     "react": "^19.2.4",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^19.2.4",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^7.13.1",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
