@@ -193,7 +193,137 @@ function TheoryPanel({ params, greeks, price }) {
 }
 
 // ── Main Page ─────────────────────────────────────────────────────────────────
+// ── Sensitivity Chart ─────────────────────────────────────────────────────────
 
+function SensitivityChart({ params }) {
+  const [activeGreek, setActiveGreek] = useState('price');
+
+  const spots = useMemo(() => {
+    const min = params.S * 0.5;
+    const max = params.S * 1.5;
+    const steps = 100;
+    return Array.from({ length: steps }, (_, i) => min + (max - min) * i / (steps - 1));
+  }, [params.S]);
+
+  const data = useMemo(() => {
+    return spots.map(s => {
+      const p = blackScholes(s, params.K, params.T, params.r, params.sigma, params.q, params.type);
+      const g = calcGreeks(s, params.K, params.T, params.r, params.sigma, params.q, params.type);
+      return { spot: s, price: p, ...g };
+    });
+  }, [spots, params]);
+
+  const greekOptions = [
+    { key: 'price', label: 'Price',  color: '#2563eb' },
+    { key: 'delta', label: 'Delta',  color: '#16a34a' },
+    { key: 'gamma', label: 'Gamma',  color: '#d97706' },
+    { key: 'vega',  label: 'Vega',   color: '#9333ea' },
+    { key: 'theta', label: 'Theta',  color: '#dc2626' },
+  ];
+
+  const active = greekOptions.find(g => g.key === activeGreek);
+  const yValues = data.map(d => d[activeGreek]);
+  const xValues = data.map(d => d.spot);
+
+  // Simple SVG line chart
+  const width  = 600;
+  const height = 220;
+  const padL = 50, padR = 20, padT = 20, padB = 35;
+  const chartW = width - padL - padR;
+  const chartH = height - padT - padB;
+
+  const xMin = Math.min(...xValues);
+  const xMax = Math.max(...xValues);
+  const yMin = Math.min(...yValues);
+  const yMax = Math.max(...yValues);
+
+  const toX = x => padL + (x - xMin) / (xMax - xMin) * chartW;
+  const toY = y => padT + chartH - (y - yMin) / (yMax - yMin) * chartH;
+
+  const pathD = xValues.map((x, i) =>
+    `${i === 0 ? 'M' : 'L'} ${toX(x).toFixed(1)} ${toY(yValues[i]).toFixed(1)}`
+  ).join(' ');
+
+  // Current spot line
+  const currentX = toX(params.S);
+
+  // Y axis ticks
+  const yTicks = [yMin, (yMin + yMax) / 2, yMax];
+
+  return (
+    <div className="card">
+      <div className="card-header">
+        <span className="card-title">Sensitivity Analysis</span>
+        <div style={{ display: 'flex', gap: 6 }}>
+          {greekOptions.map(g => (
+            <button
+              key={g.key}
+              onClick={() => setActiveGreek(g.key)}
+              style={{
+                padding: '3px 10px',
+                fontSize: 11,
+                fontWeight: 600,
+                borderRadius: 4,
+                border: `1px solid ${activeGreek === g.key ? g.color : 'var(--border)'}`,
+                background: activeGreek === g.key ? g.color : 'transparent',
+                color: activeGreek === g.key ? 'white' : 'var(--text-secondary)',
+                cursor: 'pointer',
+              }}
+            >
+              {g.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <svg width="100%" viewBox={`0 0 ${width} ${height}`}>
+        {/* Grid lines */}
+        {yTicks.map((tick, i) => (
+          <g key={i}>
+            <line
+              x1={padL} y1={toY(tick)}
+              x2={width - padR} y2={toY(tick)}
+              stroke="var(--border)" strokeWidth="1" strokeDasharray="4,4"
+            />
+            <text
+              x={padL - 6} y={toY(tick) + 4}
+              textAnchor="end" fontSize="10" fill="var(--text-muted)"
+            >
+              {tick.toFixed(2)}
+            </text>
+          </g>
+        ))}
+
+        {/* X axis labels */}
+        {[xMin, params.S, xMax].map((x, i) => (
+          <text
+            key={i}
+            x={toX(x)} y={height - 8}
+            textAnchor="middle" fontSize="10" fill="var(--text-muted)"
+          >
+            {x.toFixed(0)}
+          </text>
+        ))}
+
+        {/* Line */}
+        <path d={pathD} fill="none" stroke={active.color} strokeWidth="2" />
+
+        {/* Current spot vertical line */}
+        <line
+          x1={currentX} y1={padT}
+          x2={currentX} y2={height - padB}
+          stroke="var(--text-muted)" strokeWidth="1" strokeDasharray="4,4"
+        />
+        <text
+          x={currentX + 4} y={padT + 12}
+          fontSize="10" fill="var(--text-muted)"
+        >
+          S={params.S}
+        </text>
+      </svg>
+    </div>
+  );
+}
 export default function OptionsPricer() {
   const [params, setParams] = useState({
     S: 100, K: 100, T: 1, r: 0.05, sigma: 0.2, q: 0, type: 'call'
@@ -217,6 +347,7 @@ export default function OptionsPricer() {
           </p>
         </div>
         <GreeksPanel greeks={greeks} price={price} />
+        <SensitivityChart params={params} />
       </div>
       <TheoryPanel params={params} greeks={greeks} price={price} />
     </div>
