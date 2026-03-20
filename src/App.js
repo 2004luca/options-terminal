@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+// Root component — sets up routing between pages
 
-function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import OptionsPricer from './pages/OptionsPricer';
+import StrategyPlayground from './pages/StrategyPlayground';
+import PDESolver from './pages/PDESolver';
+import VolSurface from './pages/VolSurface';
+import OptionsChain from './pages/OptionsChain';
+import './styles/global.css';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/"         element={<OptionsPricer />} />
+          <Route path="/strategy" element={<StrategyPlayground />} />
+          <Route path="/pde"      element={<PDESolver />} />
+          <Route path="/surface"  element={<VolSurface />} />
+          <Route path="/chain"    element={<OptionsChain />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
-
-export default App;
