@@ -152,6 +152,7 @@ function solveExplicit(S, K, T, r, sigma, q, NS, NT, type) {
  * Less accurate than Crank-Nicolson for same step size
  */
 function solveImplicit(S, K, T, r, sigma, q, NS, NT, type) {
+  const Smax = S[S.length - 1];
   const dS = Smax / NS;
   const dt = T / NT;
 
