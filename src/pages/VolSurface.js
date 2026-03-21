@@ -98,15 +98,15 @@ export default function VolSurface() {
           <div>
             {[
               {
-                title: '😄 Volatility Smile',
+                title: 'Volatility Smile',
                 desc: 'IV is higher for OTM options (both calls and puts) than ATM options. The market assigns higher probability to extreme moves than a normal distribution would suggest — fat tails.',
               },
               {
-                title: '📉 Volatility Skew',
+                title: 'Volatility Skew',
                 desc: 'For equity indices, OTM puts are more expensive than OTM calls. Investors pay a premium for crash protection — fear of large down moves is greater than fear of large up moves.',
               },
               {
-                title: '⏱️ Term Structure',
+                title: 'Term Structure',
                 desc: 'Short-dated options often have higher IV than long-dated (inverted term structure) during stress, and lower IV during calm markets (normal term structure).',
               },
             ].map(item => (
@@ -128,7 +128,7 @@ export default function VolSurface() {
           </span>
         </div>
         <div className="info-box" style={{ marginBottom: 16, fontSize: 12 }}>
-          <strong>📌 Note on data:</strong> This surface is generated using a realistic 
+          <strong>Note on data:</strong> This surface is generated using a realistic 
           parametric model (SVI — Stochastic Volatility Inspired), not live market data. 
           In production, implied vols are extracted from real option prices using 
           Black-Scholes inversion. The shape and dynamics are calibrated to be 
@@ -158,9 +158,9 @@ export default function VolSurface() {
       {/* Tabs */}
       <div className="tabs">
         {[
-          { key: 'surface', label: '🌐 3D Surface' },
-          { key: 'smile',   label: '😄 Vol Smile' },
-          { key: 'term',    label: '⏱️ Term Structure' },
+          { key: 'surface', label: ' 3D Surface' },
+          { key: 'smile',   label: ' Vol Smile' },
+          { key: 'term',    label: ' Term Structure' },
         ].map(t => (
           <div key={t.key}
             className={`tab ${activeTab === t.key ? 'active' : ''}`}
@@ -291,11 +291,11 @@ export default function VolSurface() {
             <div className="grid-2" style={{ gap: 16 }}>
               {[
                 {
-                  title: '📅 Calendar Spreads',
+                  title: 'Calendar Spreads',
                   desc: 'Traders exploit the term structure by buying short-dated vol and selling long-dated vol (or vice versa). If the term structure is inverted and expected to normalize, selling front-month vol and buying back-month vol captures the normalization.',
                 },
                 {
-                  title: '🎯 Event Pricing',
+                  title: 'Event Pricing',
                   desc: 'Specific events (FOMC, earnings, elections) cause "kinks" in the term structure — the expiry just after the event has elevated IV. Traders can buy pre-event vol and sell post-event vol to isolate the event premium.',
                 },
               ].map(item => (
@@ -325,19 +325,19 @@ export default function VolSurface() {
         <div className="grid-2" style={{ gap: 16 }}>
           {[
             {
-              title: '📊 Fat Tails',
+              title: 'Fat Tails',
               desc: 'Black-Scholes assumes log-normal returns. Real returns have fat tails — extreme moves happen more often than the model predicts. OTM options are more expensive because the market knows crashes happen.',
             },
             {
-              title: '📉 Jump Risk',
+              title: 'Jump Risk',
               desc: 'Stocks can gap down overnight or on news. Black-Scholes assumes continuous price paths. Short-dated OTM puts are expensive because they protect against these gaps.',
             },
             {
-              title: '🔄 Stochastic Volatility',
+              title: 'Stochastic Volatility',
               desc: 'Vol is not constant — it is itself random. When vol is high, it creates more demand for options, pushing IV higher. Models like Heston and SABR extend Black-Scholes to allow vol to be stochastic.',
             },
             {
-              title: '💰 Supply & Demand',
+              title: 'Supply & Demand',
               desc: 'Structural demand for puts from portfolio managers and structured product hedging creates persistent skew. This is not just a model artifact — it reflects real market microstructure.',
             },
           ].map(item => (

@@ -341,7 +341,7 @@ export default function OptionsPricer() {
       <InputPanel params={params} onChange={onChange} />
       <div className="panel-center">
         <div style={{ marginBottom: 20 }}>
-          <h1>⚡ Options Pricer</h1>
+          <h1>Options Pricer</h1>
           <p style={{ marginTop: 4 }}>
             Black-Scholes analytical pricing with real-time Greeks
           </p>

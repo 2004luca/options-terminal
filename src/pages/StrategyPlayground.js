@@ -301,7 +301,7 @@ export default function StrategyPlayground() {
 return (
     <div style={{ maxWidth: 900, margin: '0 auto' }}>
       <div style={{ marginBottom: 24 }}>
-        <h1>📊 Strategy Playground</h1>
+        <h1>Strategy Playground</h1>
         <p style={{ marginTop: 4 }}>
           Black-Scholes P&L analysis for common options strategies. S₀ = {S0}
         </p>
@@ -435,7 +435,7 @@ return (
           {/* When to use */}
           <div>
             <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--text-primary)' }}>
-              📌 When to Use
+              When to Use
             </div>
             <div className="info-box" style={{ margin: 0, fontSize: 13 }}>
               {strat.when}

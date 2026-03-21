@@ -237,7 +237,7 @@ export default function PDESolver() {
 
       <div className="panel-center">
         <div style={{ marginBottom: 20 }}>
-          <h1>🔢 PDE Solver</h1>
+          <h1>PDE Solver</h1>
           <p style={{ marginTop: 4 }}>
             Finite Difference Method solver for the Black-Scholes PDE — 
             numerical vs analytical comparison
@@ -246,12 +246,10 @@ export default function PDESolver() {
 
         {!result && (
           <div className="card" style={{ textAlign: 'center', padding: 40 }}>
-            <div style={{ fontSize: 32, marginBottom: 12 }}>🔢</div>
             <h2 style={{ marginBottom: 8 }}>Ready to Solve</h2>
             <p>Set parameters and click <strong>Recompute PDE Solution</strong> to run the solver.</p>
           </div>
         )}
-
         {result && (
           <>
             {/* 3D Surface */}

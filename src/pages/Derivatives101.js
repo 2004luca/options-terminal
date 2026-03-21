@@ -82,7 +82,7 @@ export default function Derivatives101() {
   return (
     <div style={{ maxWidth: 900, margin: '0 auto' }}>
       <div style={{ marginBottom: 24 }}>
-        <h1>📚 Derivatives 101</h1>
+        <h1>Derivatives 101</h1>
         <p style={{ marginTop: 4 }}>
           A complete guide to derivatives, options pricing, Greeks, and real-world applications.
         </p>
@@ -100,9 +100,9 @@ export default function Derivatives101() {
         </p>
         <div className="grid-3" style={{ marginBottom: 16 }}>
           {[
-            { title: '🛡️ Hedging', desc: 'Reducing risk by taking an offsetting position. An airline buys oil futures to lock in fuel costs. A company buys FX options to protect against currency moves.' },
-            { title: '📈 Speculation', desc: 'Taking a leveraged view on price direction. A trader buys call options to profit from a stock rally with limited downside (the premium paid).' },
-            { title: '⚖️ Arbitrage', desc: 'Exploiting price differences between related instruments to lock in risk-free profit. Keeps markets efficient and prices consistent.' },
+            { title: 'Hedging', desc: 'Reducing risk by taking an offsetting position. An airline buys oil futures to lock in fuel costs. A company buys FX options to protect against currency moves.' },
+            { title: 'Speculation', desc: 'Taking a leveraged view on price direction. A trader buys call options to profit from a stock rally with limited downside (the premium paid).' },
+            { title: 'Arbitrage', desc: 'Exploiting price differences between related instruments to lock in risk-free profit. Keeps markets efficient and prices consistent.' },
           ].map(item => (
             <div key={item.title} style={{
               background: 'var(--bg-secondary)', border: '1px solid var(--border)',
@@ -137,7 +137,7 @@ export default function Derivatives101() {
           <div className="grid-2" style={{ gap: 16 }}>
             {[
               {
-                title: '📋 Forwards vs Futures',
+                title: 'Forwards vs Futures',
                 content: `Both are agreements to buy/sell at a future date at a fixed price. The key differences:
                 
 - Forwards are OTC (bilateral, customizable, counterparty risk)
@@ -146,7 +146,7 @@ export default function Derivatives101() {
 - Daily mark-to-market means gains/losses are settled daily (futures) vs at maturity (forwards)`
               },
               {
-                title: '🔄 Interest Rate Swaps',
+                title: 'Interest Rate Swaps',
                 content: `The most common derivative in the world. Two parties exchange cash flows:
                 
 - Party A pays a fixed rate (e.g. 4%)
@@ -156,7 +156,7 @@ export default function Derivatives101() {
 - Also used to speculate on interest rate direction`
               },
               {
-                title: '⚡ Why Options are Special',
+                title: 'Why Options are Special',
                 content: `Options are unique because they give the buyer a right, not an obligation:
                 
 - The buyer pays a premium upfront for this right
@@ -166,7 +166,7 @@ export default function Derivatives101() {
 - The premium must reflect the probability of exercise — this is what Black-Scholes solves`
               },
               {
-                title: '💱 Currency Forwards (FX Forwards)',
+                title: 'Currency Forwards (FX Forwards)',
                 content: `The most common use of forwards in the real world:
                 
 - A US company expecting €10M revenue in 6 months
@@ -193,7 +193,7 @@ export default function Derivatives101() {
       <Section number={3} title="Options Deep Dive">
         <div className="grid-2" style={{ gap: 16, marginBottom: 16 }}>
           <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 6, padding: '14px 16px' }}>
-            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--green)' }}>📞 Call Option</div>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--green)' }}>Call Option</div>
             <p style={{ fontSize: 12, lineHeight: 1.6, marginBottom: 8 }}>
               The right to <strong>buy</strong> the underlying at the strike price K before/at expiry.
             </p>
@@ -203,7 +203,7 @@ export default function Derivatives101() {
             </p>
           </div>
           <div style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 6, padding: '14px 16px' }}>
-            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--red)' }}>📉 Put Option</div>
+            <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--red)' }}>Put Option</div>
             <p style={{ fontSize: 12, lineHeight: 1.6, marginBottom: 8 }}>
               The right to <strong>sell</strong> the underlying at the strike price K before/at expiry.
             </p>
@@ -627,7 +627,7 @@ export default function Derivatives101() {
         <div className="grid-2" style={{ gap: 16 }}>
           {[
             {
-              title: '🏦 Investment Banks',
+              title: 'Investment Banks',
               items: [
                 { label: 'Structured products', desc: 'Create capital-protected notes for retail investors by combining bonds + options.' },
                 { label: 'Client hedging', desc: 'Help corporate clients hedge FX, rates, and commodity exposure using tailored derivatives.' },
@@ -636,7 +636,7 @@ export default function Derivatives101() {
               ]
             },
             {
-              title: '📊 Hedge Funds',
+              title: 'Hedge Funds',
               items: [
                 { label: 'Long/short vol', desc: 'Buy realized vol (long gamma) vs selling implied vol (short vega) to capture the variance risk premium.' },
                 { label: 'Tail risk hedging', desc: 'Buy deep OTM puts as insurance against market crashes — pays off massively in crises.' },
@@ -645,7 +645,7 @@ export default function Derivatives101() {
               ]
             },
             {
-              title: '✈️ Airlines & Commodities',
+              title: 'Airlines & Commodities',
               items: [
                 { label: 'Fuel hedging', desc: 'Airlines buy oil call options or futures to cap fuel costs. Southwest Airlines famous for hedging 80%+ of fuel needs.' },
                 { label: 'Revenue hedging', desc: 'Gold miners sell forward contracts to lock in gold prices and secure project financing.' },
@@ -653,7 +653,7 @@ export default function Derivatives101() {
               ]
             },
             {
-              title: '🏢 Corporations',
+              title: 'Corporations',
               items: [
                 { label: 'FX hedging', desc: 'Apple earns revenue in 40+ currencies. Buys FX forwards and options to reduce earnings volatility from currency moves.' },
                 { label: 'Interest rate hedging', desc: 'Companies with floating-rate debt buy interest rate caps or enter pay-fixed swaps to protect against rate rises.' },

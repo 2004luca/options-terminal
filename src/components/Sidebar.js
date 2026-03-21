@@ -9,22 +9,22 @@ const navItems = [
   {
     section: 'Learn',
     items: [
-      { path: '/learn', icon: '📚', label: 'Derivatives 101', badge: 'Start here' },
+      { path: '/learn',    icon: '', label: 'Derivatives 101',     badge: 'Start here' },
     ]
   },
   {
     section: 'Pricing',
     items: [
-      { path: '/',         icon: '⚡', label: 'Options Pricer',      badge: 'BS + PDE' },
-      { path: '/strategy', icon: '📊', label: 'Strategy Playground', badge: 'P&L' },
+      { path: '/',         icon: '', label: 'Options Pricer',      badge: 'BS + PDE' },
+      { path: '/strategy', icon: '', label: 'Strategy Playground', badge: 'P&L' },
     ]
   },
   {
     section: 'Advanced',
     items: [
-      { path: '/pde',     icon: '🔢', label: 'PDE Solver',    badge: '3D' },
-      { path: '/surface', icon: '🌐', label: 'Vol Surface',   badge: 'Live' },
-      { path: '/chain',   icon: '📋', label: 'Options Chain', badge: 'Live' },
+      { path: '/pde',     icon: '', label: 'PDE Solver',    badge: '3D' },
+      { path: '/surface', icon: '', label: 'Vol Surface',   badge: 'Live' },
+      { path: '/chain',   icon: '', label: 'Options Chain', badge: 'Live' },
     ]
   }
 ];

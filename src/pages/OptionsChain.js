@@ -370,7 +370,7 @@ export default function OptionsChain() {
         </div>
 
         <div className="info-box" style={{ marginTop: 16, fontSize: 12 }}>
-          <strong>📌 Note on data:</strong> This chain is generated using Black-Scholes with a flat 
+          <strong>Note on data:</strong> This chain is generated using Black-Scholes with a flat 
           vol surface. In real markets, each strike would have a different IV (the vol smile/skew). 
           Open interest and volume are simulated to be representative of real market behavior 
           (higher near ATM, lower for deep OTM strikes). With a real market data API 
