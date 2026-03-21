@@ -132,7 +132,7 @@ export default function OptionsChain() {
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto' }}>
       <div style={{ marginBottom: 24 }}>
-        <h1>📋 Options Chain</h1>
+        <h1>Options Chain</h1>
         <p style={{ marginTop: 4 }}>
           Real-world style options chain — Black-Scholes pricing with Greeks and open interest.
         </p>

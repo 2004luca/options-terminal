@@ -69,7 +69,7 @@ export default function VolSurface() {
   return (
     <div style={{ maxWidth: 1000, margin: '0 auto' }}>
       <div style={{ marginBottom: 24 }}>
-        <h1>🌐 Volatility Surface</h1>
+        <h1>Volatility Surface </h1>
         <p style={{ marginTop: 4 }}>
           Implied volatility across strikes and maturities — the most important structure in options markets.
         </p>
