@@ -2,7 +2,7 @@
 // Options Chain — real-world style options chain with BS pricing
 
 import React, { useState, useMemo } from 'react';
-import { blackScholes, calcGreeks, impliedVolatility } from '../utils/blackscholes';
+import { blackScholes, calcGreeks } from '../utils/blackscholes';
 
 // ── Chain Generator ───────────────────────────────────────────────────────────
 

@@ -2,7 +2,7 @@
 // Black-Scholes pricing model and Greeks
 // All the financial math lives here — imported by other components
 
-import * as math from 'mathjs';
+//import * as math from 'mathjs';
 
 // ─── Normal Distribution ───────────────────────────────────────────────────
 

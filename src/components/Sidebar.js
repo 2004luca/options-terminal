@@ -16,7 +16,7 @@ const navItems = [
     section: 'Pricing',
     items: [
       { path: '/',         icon: '⚡', label: 'Options Pricer',      badge: 'BS + PDE' },
-      { path: '/strategy', icon: '📊', label: 'Strategy Playground', badge: null },
+      { path: '/strategy', icon: '📊', label: 'Strategy Playground', badge: 'P&L' },
     ]
   },
   {

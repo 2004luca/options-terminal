@@ -4,7 +4,7 @@
 import React, { useState, useCallback } from 'react';
 import Plot from 'react-plotly.js';
 import { solvePDE } from '../utils/pde';
-import { blackScholes } from '../utils/blackscholes';
+//import { blackScholes } from '../utils/blackscholes';
 
 // ── Input Panel ───────────────────────────────────────────────────────────────
 

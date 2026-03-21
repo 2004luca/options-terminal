@@ -124,7 +124,7 @@ function solveExplicit(S, K, T, r, sigma, q, NS, NT, type) {
     const newV = [...V];
 
     for (let i = 1; i < NS; i++) {
-      const Si = S[i];
+      //const Si = S[i];
       const alpha = 0.5 * dt * (sigma * sigma * i * i - (r - q) * i);
       const beta  = 1 - dt * (sigma * sigma * i * i + r);
       const gamma = 0.5 * dt * (sigma * sigma * i * i + (r - q) * i);
@@ -153,7 +153,7 @@ function solveExplicit(S, K, T, r, sigma, q, NS, NT, type) {
  * Less accurate than Crank-Nicolson for same step size
  */
 function solveImplicit(S, K, T, r, sigma, q, NS, NT, type) {
-  const Smax = S[S.length - 1];
+  //const Smax = S[S.length - 1];
   const dS = Smax / NS;
   const dt = T / NT;
 
