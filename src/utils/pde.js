@@ -153,7 +153,6 @@ function solveExplicit(S, K, T, r, sigma, q, NS, NT, type) {
  */
 function solveImplicit(S, K, T, r, sigma, q, NS, NT, type) {
   const Smax = S[S.length - 1];
-  const dS = Smax / NS;
   const dt = T / NT;
 
   let V = terminalCondition(S, K, type);
