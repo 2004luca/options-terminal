@@ -445,7 +445,7 @@ return (
           {/* Risk Profile */}
           <div>
             <div style={{ fontWeight: 600, fontSize: 13, marginBottom: 8, color: 'var(--text-primary)' }}>
-              ⚖️ Risk Profile
+               Risk Profile
             </div>
             {(() => {
               const maxProfit  = Math.max(...pnlExpiry);
